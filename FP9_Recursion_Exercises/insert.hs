@@ -6,3 +6,7 @@ insert x [a] = [min a x, max a x]
 insert x (a:b:as)
     | x >= a && x <= b = [a,x,b] ++ as
     | otherwise        = a : insert x (b : as)
+
+isort :: Ord a => [a] -> [a]
+isort [] = []
+isort (x:xs) = insert x (isort xs)

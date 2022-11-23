@@ -1,7 +1,6 @@
 -- Taking two sorted lists, merge them together to produce one final sorted list:
 -- merge [2,5,6] [1,3,4] = [1,2,3,4,5,6]
 merge :: Ord a => [a] -> [a] -> [a]
-merge [] [] = []
 merge as [] = as
 merge [] bs = bs
 merge (x:xs) (y:ys) = [min x y] ++ [max x y] ++ merge xs ys

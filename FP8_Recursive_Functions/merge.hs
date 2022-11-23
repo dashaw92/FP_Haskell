@@ -3,7 +3,7 @@
 merge :: Ord a => [a] -> [a] -> [a]
 merge as [] = as
 merge [] bs = bs
-merge (x:xs) (y:ys) = [min x y] ++ [max x y] ++ merge xs ys
+merge (x:xs) (y:ys) = [min x y, max x y] ++ merge xs ys
 
 -- I don't /think/ this is considered cheating, because I did implement it the expected way?
 -- The only thing sketchy is using min and max, but that's just shorthand for doing the if/else's
